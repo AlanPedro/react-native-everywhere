@@ -33,6 +33,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "expo": "^27.0.1",
     "expo-web": "0.0.14",
     "lodash": "^4.17.10",
@@ -44,6 +45,7 @@
     "react-router-dom": "^4.3.1",
     "react-router-native": "^4.3.0",
     "redux": "^4.0.0",
+    "redux-promise": "^0.6.0",
     "webpack": "^4.16.5"
   }
 }

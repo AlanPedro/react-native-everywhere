@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { Text, View } from 'react-native';
 import { Link } from '../utilities/routing/router';
-
-import { testApplication } from '../actions';
 
 class TestComponent extends Component {
   render() {
     return (
       <View>
-        <TouchableOpacity onPress={() => this.props.testApplication()}>
-          <Text> {this.props.counter} </Text>
-        </TouchableOpacity>
         <Link to='/second'>
           <Text> To screen 2 </Text>
         </Link>
@@ -21,10 +14,4 @@ class TestComponent extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    counter: state.counter,
-  }
-}
-
-export default connect(mapStateToProps, { testApplication })(TestComponent)
+export default TestComponent;

@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from '../utilities/routing/router';
 
-import { testApplication } from '../actions';
+import { getPosts } from '../actions';
 
 class SecondTestComponent extends Component {
+
+  _renderPosts = () => {
+    const { posts } = this.props;
+    return newPosts = _.map(posts, post => <li key={post.id}> {post.title} </li>)
+  }
+
   render() {
     return (
       <View>
-        <TouchableOpacity onPress={() => this.props.testApplication()}>
-          <Text> {this.props.counter + 10} </Text>
+        <View>{this._renderPosts()}</View>
+        <TouchableOpacity onPress={() => this.props.getPosts()}>
+          <Text> Get Posts </Text>
         </TouchableOpacity>
         <Link to='/'>
           <Text> To screen 1 </Text>
@@ -22,9 +28,7 @@ class SecondTestComponent extends Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    counter: state.counter,
-  }
+  return { posts: state.posts }
 }
 
-export default connect(mapStateToProps, { testApplication })(SecondTestComponent)
+export default connect(mapStateToProps, { getPosts })(SecondTestComponent)
