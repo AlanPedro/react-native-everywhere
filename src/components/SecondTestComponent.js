@@ -6,15 +6,15 @@ import { Link } from '../utilities/routing/router';
 
 import { testApplication } from '../actions';
 
-class TestComponent extends Component {
+class SecondTestComponent extends Component {
   render() {
     return (
       <View>
         <TouchableOpacity onPress={() => this.props.testApplication()}>
-          <Text> {this.props.counter} </Text>
+          <Text> {this.props.counter + 10} </Text>
         </TouchableOpacity>
-        <Link to='/second'>
-          <Text> To screen 2 </Text>
+        <Link to='/'>
+          <Text> To screen 1 </Text>
         </Link>
       </View>
     )
@@ -27,4 +27,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { testApplication })(TestComponent)
+export default connect(mapStateToProps, { testApplication })(SecondTestComponent)

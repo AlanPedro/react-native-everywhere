@@ -19,6 +19,7 @@ const babelLoaderConfiguration = {
     path.resolve(appDirectory, 'node_modules/react-native-paper'),
     path.resolve(appDirectory, 'node_modules/react-native-vector-icons'),
     path.resolve(appDirectory, 'node_modules/react-native-safe-area-view'),
+    path.resolve(appDirectory, 'node_modules/react-router-native'),
     path.resolve(appDirectory, 'node_modules/@expo/samples'),
     path.resolve(appDirectory, 'node_modules/@expo/vector-icons'),
     path.resolve(appDirectory, 'node_modules/react-native-platform-touchable'),

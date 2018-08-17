@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 
-import boilerplateApp from './reducers';
-import TestComponent from './components/TestComponent'
+import store from './utilities/store';
+import Routing, { Router } from './utilities/routing/index';
+import TestComponent from './components/TestComponent';
+import SecondTestComponent from './components/SecondTestComponent';
 
-const store = createStore(boilerplateApp)
+const Route = Routing.Route;
 
 const App = () => {
   return (
     <Provider store={store}>
-      <View>
-        <TestComponent />
-      </View>
+      <Router>
+        <View>
+          <Route exact path='/' component={TestComponent} />
+          <Route path='/second' component={SecondTestComponent} />
+        </View>
+      </Router>
     </Provider>
   );
 }
