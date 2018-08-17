@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-import { Link } from '../utilities/routing/router';
 
-class TestComponent extends Component {
-  render() {
-    return (
-      <View>
-        <Link to='/second'>
-          <Text> To screen 2 </Text>
-        </Link>
-      </View>
-    )
-  }
+const TestComponent = () => {
+  return (
+    <View>
+      <Text> Hello! It's react everywhere!</Text>
+      <Text> This is a react-native boilerplate</Text>
+    </View>
+  )
 }
 
 export default TestComponent;

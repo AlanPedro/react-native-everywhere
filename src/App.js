@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import store from './utilities/store';
 import Routing, { Router } from './utilities/routing/index';
 import TestComponent from './components/TestComponent';
-import SecondTestComponent from './components/SecondTestComponent';
 
 const Route = Routing.Route;
 
@@ -13,9 +12,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <View>
+        <View styles={styles.container}>
           <Route exact path='/' component={TestComponent} />
-          <Route path='/second' component={SecondTestComponent} />
         </View>
       </Router>
     </Provider>
@@ -30,9 +28,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  bordered: {
-    borderColor: 'red',
-    borderWidth: 1,
   }
 });
