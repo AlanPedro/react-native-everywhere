@@ -36,6 +36,7 @@ const babelLoaderConfiguration = {
         'expo-web',
         'react-native-web',
         'transform-decorators-legacy',
+        'syntax-object-rest-spread',
         ['transform-runtime', { helpers: false, polyfill: false, regenerator: true }],
       ],
       // The 'react-native' preset is recommended to match React Native's packager
