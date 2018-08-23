@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { Provider } from 'react-redux';
 
 import store from './utilities/store';
-import Routing, { Router } from './utilities/routing/index';
+import Routing, { Router, Switch } from './utilities/routing/index';
 import TestComponent from './components/TestComponent';
 
 const Route = Routing.Route;
@@ -12,9 +12,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <View styles={styles.container}>
+        <Switch>
           <Route exact path='/' component={TestComponent} />
-        </View>
+        </Switch>
       </Router>
     </Provider>
   );
